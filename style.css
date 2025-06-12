@@ -1,0 +1,398 @@
+:root {
+    --main-bg: #fffbe7;
+    --accent-bg: #fff;
+    --primary: #ffb347;
+    --primary-dark: #b97a00;
+    --primary-light: #ffe082;
+    --text-main: #23272f;
+    --text-accent: #a05a00;
+    --box-shadow: 0 4px 24px rgba(250, 180, 70, 0.08);
+    --border-radius: 18px;
+}
+
+body.dark-theme {
+    --main-bg: #23272f;
+    --accent-bg: #2c2f36;
+    --primary: #ffb347;
+    --primary-dark: #ffe082;
+    --primary-light: #b97a00;
+    --text-main: #fffbe7;
+    --text-accent: #ffe082;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--main-bg);
+    color: var(--text-main);
+    margin: 0;
+    padding: 20px;
+    transition: background 0.3s, color 0.3s;
+}
+
+header {
+    background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
+    padding: 32px 0 24px 0;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(44,62,80,0.08);
+    border-bottom: 4px solid var(--primary);
+    border-radius: 0 0 24px 24px;
+    margin-bottom: 32px;
+    position: relative;
+}
+
+header h1 {
+    color: var(--text-main);
+    font-size: 2.4em;
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin: 0;
+    text-shadow: 0 2px 8px rgba(255,255,255,0.15);
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 16px 0;
+    font-size: 0.9em;
+    color: var(--text-accent);
+    border-top: 1px solid var(--primary-light);
+}
+
+#theme-toggle {
+    position: fixed;
+    top: 22px;
+    right: 24px;
+    z-index: 1001;
+    padding: 10px 22px;
+    font-size: 1.4em;
+    border-radius: 50%;
+    border: none;
+    background: #23272f;
+    color: #ffb347;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.15);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body.dark-theme #theme-toggle {
+    background: #fffbe7;
+    color: #d48806;
+}
+
+#theme-toggle:hover, #theme-toggle:focus {
+    background: #23272f;
+    color: #23272f;
+    box-shadow: 0 4px 16px rgba(44,62,80,0.18);
+    outline: 2px solid #d48806;
+}
+
+.intro {
+    max-width: 700px;
+    margin: 0 auto 32px auto;
+    padding: 20px;
+    background: var(--accent-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+.criteria-section {
+    background: var(--main-bg);
+    border: 2px solid var(--primary);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 28px 24px 18px 24px;
+    margin: 0 auto 32px auto;
+    max-width: 700px;
+    text-align: center;
+}
+
+.criteria-section h2 {
+    color: var(--primary-dark);
+    font-size: 1.4em;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.criteria-icon {
+    font-size: 1.3em;
+}
+
+.criteria-section .checklist {
+    background: var(--accent-bg);
+    border-radius: 12px;
+    display: inline-block;
+    padding: 18px 28px;
+    margin: 0 auto 12px auto;
+    box-shadow: 0 2px 8px rgba(255,179,71,0.07);
+    border: 1px solid #ffe0a3;
+    text-align: left;
+    list-style: none;
+}
+
+.criteria-section .checklist li {
+    font-size: 1.08em;
+    margin-bottom: 8px;
+    color: var(--text-main);
+}
+
+.criteria-section .checklist li::before {
+    content: "✔";
+    margin-right: 8px;
+    color: var(--primary-dark);
+}
+
+.criteria-note {
+    color: var(--text-accent);
+    font-weight: 600;
+    margin-top: 10px;
+    font-size: 1.1em;
+}
+
+.game-section {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.game-section a {
+    display: inline-block;
+    width: auto;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.game-title {
+    text-align: center;
+    margin-bottom: 0;
+    margin-top: 40px;
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--primary-dark);
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px rgba(44,62,80,0.08);
+}
+
+.game-box {
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    background: var(--accent-bg);
+    border-radius: 25px;
+    box-shadow: var(--box-shadow);
+    padding: 24px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border: 1px solid #ffe0a3;
+}
+
+.game-image {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    display: block;
+    margin: 0 auto 16px auto;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(44,62,80,0.10);
+    transition: transform 0.18s, box-shadow 0.18s;
+    cursor: pointer;
+}
+
+.game-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+}
+
+.game-list li {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    min-height: 160px;
+    border-radius: 18px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(44,62,80,0.13);
+    border: 2.5px solid #ffb347;
+    transition: transform 0.18s, box-shadow 0.18s;
+    flex: 1 1 220px;
+    max-width: 260px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.game-list li::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(30,30,30,0.62) 60%, rgba(255,179,71,0.18) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.game-list li a {
+    position: relative;
+    z-index: 2;
+    display: block;
+    padding: 32px 24px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.13em;
+    text-decoration: none;
+    text-shadow: 0 2px 8px rgba(44,62,80,0.22);
+    border-radius: 14px;
+    transition: background 0.18s;
+    background: rgba(0,0,0,0.18);
+}
+
+.game-list li:hover, .game-list li:focus-within {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 8px 28px rgba(250,180,70,0.17);
+    border-color: #b97a00;
+}
+
+a:hover .game-image, a:focus .game-image {
+    transform: scale(1.03);
+    box-shadow: 0 6px 24px rgba(250,180,70,0.18);
+    outline: 2px solid var(--primary-dark);
+}
+
+
+ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-left: 0;
+    list-style: none;
+    justify-content: center;
+}
+
+ol li {
+    background: var(--accent-bg);
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(255,179,71,0.07);
+    padding: 16px 20px;
+    margin: 0;
+    min-width: 220px;
+    max-width: 260px;
+    flex: 1 1 220px;
+    font-weight: 500;
+    transition: transform 0.15s, box-shadow 0.15s;
+    border: 1px solid #ffe0a3;
+    color: var(--text-main);
+}
+
+ol li:hover, ol li:focus-within {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 6px 18px rgba(250,180,70,0.10);
+}
+
+ol li a {
+    color: var(--text-main);
+    text-decoration: none;
+    display: block;
+    padding: 4px 0;
+    transition: color 0.15s;
+}
+
+ol li a:hover, ol li a:focus {
+    color: var(--primary-dark);
+    text-decoration: underline;
+    outline: none;
+}
+
+
+.final-verdict, section:last-of-type {
+    background: #23272f;
+    color: #fff;
+    border-top: 4px solid var(--primary);
+    margin-top: 40px;
+    padding: 32px 24px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 12px rgba(44,62,80,0.10);
+}
+
+.final-verdict h2, section:last-of-type h2 {
+    color: var(--primary);
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 8px;
+    margin-bottom: 18px;
+}
+
+.final-verdict ul li, section:last-of-type ul li {
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+
+@media (max-width: 900px) {
+    .intro, .criteria-section, .game-box {
+        max-width: 98vw;
+        padding: 12px;
+    }
+    header {
+        padding: 24px 0 16px 0;
+        border-radius: 0 0 16px 16px;
+    }
+    header h1 {
+        font-size: 1.4em;
+        padding: 0 8px;
+    }
+    .game-title {
+        font-size: 1.2em;
+        margin-top: 24px;
+    }
+    .game-list {
+        flex-direction: column;
+        align-items: center;
+    }
+    .game-list li {
+        min-width: 90vw;
+        max-width: 98vw;
+        padding: 0;
+        font-size: 1em;
+    }
+    section:last-of-type, .final-verdict {
+        padding: 18px 8px;
+    }
+}
+
+@media (max-width: 500px) {
+    body {
+        padding: 6px;
+    }
+    header h1 {
+        font-size: 1em;
+    }
+    .intro, .criteria-section, .game-box {
+        padding: 6px;
+        font-size: 1em;
+    }
+    .criteria-section h2 {
+        font-size: 1em;
+        flex-direction: column;
+        gap: 4px;
+    }
+    .criteria-section .checklist {
+        padding: 10px 6px;
+    }
+    .game-list li a {
+        padding: 18px 10px;
+        font-size: 1em;
+    }
+    .game-list li {
+        min-height: 90px;
+        border-radius: 12px;
+    }
+}
